@@ -1,0 +1,21 @@
+# https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md
+
+logger_name: 'php-light'
+
+StreamHandler:
+    enable: true
+    level: DEBUG
+
+NativeMailerHandler:
+    enable: false
+    level: ERROR
+    to: ''
+    subject: 'php-light Error'
+    from: { 'no-reply@localhost.com': 'php-light' }
+
+SwiftMailerHandler:
+    enable: false
+    level: ERROR
+    to: ''
+    subject: 'Slim 3 Error'
+    from: { 'no-reply@localhost.com': 'php-light' }

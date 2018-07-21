@@ -1,0 +1,7 @@
+.php_cs.cache
+build.xml
+vendor/**
+var/cache/config/*.json
+var/cache/twig/**/*
+*.log
+.DS_Store

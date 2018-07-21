@@ -1,0 +1,40 @@
+{
+    "name": "niuxe/php-light",
+    "description": "A php light Framework",
+    "type": "project",
+    "keywords": ["php-light", "php light", "framework"],
+    "homepage": "https://github.com/niux3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renaud Bourdeau",
+            "homepage": "https://github.com/niux3",
+            "role": "Developer",
+            "email": "renaudbourdeau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "akrabat/rka-slim-session-middleware": "^2.0",
+        "monolog/monolog": "^1.21",
+        "roave/security-advisories": "dev-master",
+        "slim/csrf": "^0.8.1",
+        "slim/flash": "^0.2.0",
+        "slim/slim": "^3.5",
+        "slim/twig-view": "^2.2",
+        "swiftmailer/swiftmailer": "^6.0",
+        "symfony/yaml": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.3"
+    }
+}

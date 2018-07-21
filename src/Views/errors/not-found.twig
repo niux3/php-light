@@ -1,0 +1,12 @@
+{% extends "layouts/main.twig" %}
+
+{% block bodyId %}error{% endblock %}
+{% block metaTitle %}404 not found{% endblock %}
+
+{% block content %}
+<main>
+    <h1>404</h1>
+    <p>La page que vous recherchez ne semble pas répondre ou n'éxiste plus.</p>
+    <p><a href="{{ path_for('home') }}" class="button evident">Aller à la page d'accueil</a></p>
+</main>
+{% endblock %}

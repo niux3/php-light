@@ -1,0 +1,12 @@
+{% extends "layouts/main.twig" %}
+
+{% block bodyId %}error{% endblock %}
+{% block metaTitle %}Error{% endblock %}
+
+{% block content %}
+<main>
+    <h1>500</h1>
+    <p>Le serveur semble occupé. Veuillez réessayer ultérieurement.</p>
+    <p><a href="{{ path_for('home') }}" class="button evident">Aller à la page d'accueil</a></p>
+</main>
+{% endblock %}

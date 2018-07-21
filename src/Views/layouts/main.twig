@@ -1,0 +1,54 @@
+<!doctype html>
+<html {% if config.language_code is defined and config.language_code %} lang="{{ config.language_code|e('html_attr') }}"{% endif %}>
+    <head>
+        <meta charset="utf-8">
+
+        {# page title #}
+
+        {% set title = '' %}
+
+        {% if block('metaTitle') is defined %}
+            {% set title = block('metaTitle') %}
+        {% endif %}
+
+        {% if config.metas.title is defined and config.metas.title %}
+            {% if title and config.metas.title_separator is defined and config.metas.title_separator %}
+                {% set title = title ~ config.metas.title_separator %}
+            {% endif %}
+
+            {% set title = title ~ config.metas.title %}
+        {% endif %}
+
+        <title>{{ title }}</title>
+
+        {# meta tags #}
+
+        {% for key, value in config.metas %}
+            {% if value and key not in ['title', 'title_separator'] %}
+        <meta name="{{ key|e('html_attr') }}" content="{{ value|e('html_attr') }}">
+            {% endif %}
+        {% endfor %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{{ base_url() }}/css/style.css">
+    </head>
+    <body id="{% block bodyId %}{% endblock %}">
+        {% if session.flash is defined and session.flash is not empty %}
+        <p id="flash-message">
+            <span>{{ session.flash }}</span>
+        </p>
+        {{ session.delete('flash') }}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+
+        {% if config.google_analytics_id is defined and config.google_analytics_id %}
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','{{ config.google_analytics_id }}','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        {% endif %}
+    </body>
+</html>
