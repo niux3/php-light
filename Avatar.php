@@ -1,5 +1,5 @@
 <?php
-    namespace App\Libs\avatar;
+    namespace App\avatar;
     class Avatar{
 
         private $image;
