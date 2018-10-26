@@ -9,7 +9,6 @@ Bonjour et bienvenue sur le framework.
 - ubuntu 16.04
 - apache 2.4.18
 - php : 7.0+
-- Slim 3
 - sqlite : 3
 - composer :1.0
 
@@ -135,5 +134,11 @@ Aussi, n'oubliez pas de recharger Apache afin qu'il prenne en compte votre confi
 ```
 sudo a2ensite php-light.test.conf && sudo systemctl reload apache2
 ```
+
+**note**: le dossier var est parfois capricieux. Lorsque vous lancez la première fois le projet, il se peut que vous tombiez sur une belle erreur. Il vous suffit de changer les droits sur ce dossier de manière récursive. 
+```
+chmod -R 777 var
+```
+
 
 Je vous souhaite un bon développement !
