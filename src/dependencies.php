@@ -167,8 +167,8 @@ $container['cookie'] = function () {
 };
 
 // database access
-$container['db'] = function () {
-    $pathDatabase = ROOT_PATH.'/src/Data/database.db';
-    $db = App\Libs\db\DB::initialize($pathDatabase);
+$container['db'] = function ($container) {
+    $config = $container->settings['database'];
+    $db = App\Libs\db\FactoryDB::initialize($config);
     return $db;
 };

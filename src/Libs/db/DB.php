@@ -3,24 +3,12 @@
     use \PDO;
 
     class DB{
-        private static $_instance = null;
         private $pdo = null;
         private $query = null;
 
-        private function __construct($pathToDatabase){
-            if(file_exists($pathToDatabase)){
-                $dns = sprintf('sqlite:%s', $pathToDatabase);
-                $this->pdo = new PDO($dns, null, null);
-                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-        }
-
-        public static function initialize($pathToDatabase) {
-            if(is_null(self::$_instance)) {
-                self::$_instance = new DB($pathToDatabase);
-            }
-
-            return self::$_instance;
+        public function __construct($params){
+            $this->pdo = new PDO($params['dns'], $params['user'], $params['password']);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
 
         public function beginTransaction(){

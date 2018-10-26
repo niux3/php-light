@@ -1,0 +1,15 @@
+# example SQLITE
+# ---------------------------
+# driver: 'sqlite'
+# path: '/src/Data/database.db'
+
+# example Mysql
+# ---------------------------
+# driver: 'Mysql'
+# host: 'localhost'
+# database: 'php-light'
+# user: 'root'
+# password: 'root'
+
+driver: 'sqlite'
+path: '/src/Data/database.db'
