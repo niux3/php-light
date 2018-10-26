@@ -9,7 +9,6 @@ Bonjour et bienvenue sur le framework.
 - ubuntu 16.04
 - apache 2.4.18
 - php : 7.0+
-- Slim 3
 - sqlite : 3
 - composer :1.0
 
